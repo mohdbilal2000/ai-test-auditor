@@ -1,0 +1,79 @@
+{
+  "name": "ai-test-auditor",
+  "version": "0.1.0",
+  "description": "Catch AI-generated tests that pass but test nothing. Scans Jest/Vitest/Mocha suites and rates each test STRONG, WEAK, or FAKE.",
+  "keywords": [
+    "test",
+    "testing",
+    "audit",
+    "linter",
+    "jest",
+    "vitest",
+    "mocha",
+    "ai",
+    "code-quality",
+    "static-analysis",
+    "cli"
+  ],
+  "type": "module",
+  "bin": {
+    "ai-test-auditor": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/cli.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohdbilal2000/ai-test-auditor.git"
+  },
+  "homepage": "https://github.com/mohdbilal2000/ai-test-auditor#readme",
+  "bugs": {
+    "url": "https://github.com/mohdbilal2000/ai-test-auditor/issues"
+  },
+  "author": "Mohd Bilal",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/parser": "^7.24.7",
+    "commander": "^12.1.0",
+    "picocolors": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.24.7",
+    "@types/node": "^20.14.9",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.2",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3",
+    "vitest": "^1.6.0"
+  }
+}
